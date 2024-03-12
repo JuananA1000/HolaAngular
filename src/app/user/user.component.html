@@ -1,4 +1,9 @@
-<p>Componente USER creado con el comando:</p>
-<pre>ng generate component user</pre>
-<p>Puedes generar otros componentes con el comando:</p>
-<pre>ng generate component nombreComponente</pre>
+<!-- 
+  A 12/03/2024, que es la fecha en que estamos haciendo este curso, ni Prettier ni BracketPair funcionan en Angular, no
+  sabemos si en el futuro se arreglará.
+ -->
+@if (isLoggedIn) {
+<p>Bienvenido, {{ userName }}</p>
+}@else {
+<p>Inicia sesión</p>
+}
