@@ -7,10 +7,11 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   template: `
     <h1>Yo soy un componente en línea</h1>
-    <h2>con estilos CSS también en línea</h2>
+    <h2>en un proyecto llamado {{ title }}</h2>
+    <h3>estoy en {{ city.toUpperCase() }}, capital del sur</h3>
   `,
   styles: `
-  h1, h2{
+  h1, h2, h3{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #e00202;
   }
@@ -18,4 +19,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'HolaAngular';
+  city = 'Fuenladrama';
 }
