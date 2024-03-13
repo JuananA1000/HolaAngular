@@ -10,9 +10,7 @@ import { GamesComponent } from '../games/games.component';
 })
 export class UserComponent {
   userName = 'JuananA1000';
-
-  // Si cambiamos el valor de esta variable, se renderiza o no el mensaje de bienvenida.
-  isLoggedIn = true;
+  isLoggedIn = false;
 
   greet() {
     alert(`Hola caracola`);
