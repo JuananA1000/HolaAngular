@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 /*
   Para utilizar este componente. IMPORTANTE:
     1. Nos dirigimos al componente dentro del cual queremos utilizarlo. En este caso, USER.component.ts.
@@ -13,6 +13,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
+    <h3>Juegos de {{ userName }}</h3>
     <ul>
       @for (game of games; track game.id) {
       <li>{{ game.name }}</li>
@@ -22,6 +23,8 @@ import { Component } from '@angular/core';
   styles: ``,
 })
 export class GamesComponent {
+  @Input() userName = '';
+
   games = [
     {
       id: 1,
