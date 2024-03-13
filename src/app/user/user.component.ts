@@ -13,4 +13,8 @@ export class UserComponent {
 
   // Si cambiamos el valor de esta variable, se renderiza o no el mensaje de bienvenida.
   isLoggedIn = true;
+
+  greet() {
+    alert(`Hola caracola`);
+  }
 }
