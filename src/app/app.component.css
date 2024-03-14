@@ -1,8 +1,14 @@
-div{
-  background-color: aquamarine;
-  width: 50%;
+h2 {
+  color: #0902e0;
 }
-h1, figure{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #e00202;
+
+h2,
+p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+div {
+  max-width: 500px;
+  font-size: 32px;
+  margin: 0 auto;
 }
