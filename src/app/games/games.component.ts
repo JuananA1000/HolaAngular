@@ -1,11 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 /*
-  Para utilizar este componente. IMPORTANTE:
-    1. Nos dirigimos al componente dentro del cual queremos utilizarlo. En este caso, USER.component.ts.
-    2. Importamos el componente en cuestión y lo añadimos a los 'imports' en @Component
-    3. Lo renderizamos en USER.component.html con <app-games>
-
-    NOTA: las etiquetas html en Angular, pueden tener etiqueta de cierre o AUTOCERRARSE, Como en ReactJS
+  Vamos a ver ahora cómo se realiza la comunicación de HIJOS a PADRES. En React, esto se hace con un callback pero, en 
+  Angular, la cosa cambia...
 */
 
 @Component({
@@ -16,7 +12,7 @@ import { Component, Input } from '@angular/core';
     <h3>Juegos de {{ userName }}</h3>
     <ul>
       @for (game of games; track game.id) {
-      <li>{{ game.name }}</li>
+      <li (click)="fav(game.name)">{{ game.name }}</li>
       }
     </ul>
   `,
@@ -24,6 +20,11 @@ import { Component, Input } from '@angular/core';
 })
 export class GamesComponent {
   @Input() userName = '';
+  @Output() addFavoriteEvent = new EventEmitter<string>();
+
+  fav(gameName: string) {
+    this.addFavoriteEvent.emit(gameName);
+  }
 
   games = [
     {
